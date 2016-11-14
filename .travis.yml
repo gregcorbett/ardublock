@@ -1,7 +1,5 @@
 language: java
-  - openjdk7
-  - openjdk6
-  - oraclejdk7
-  - oraclejdk6
+jdk: openjdk7
 before_install: ./install_openblocks
-install: mvn validate && mvn install
+install: ./install_ardublock
+script: ls target/ardublock-all.jar
