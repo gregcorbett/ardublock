@@ -1,5 +1,10 @@
 Changelog
 
+========== Version 2.0.2 ==========
+
+Patches and Bug Fixes:
+- Fix taweili#159 and arduino/Arduino#5454
+
 ========== Version 2.0.1 ==========
 
 Patches and Bug Fixes:
