@@ -5,5 +5,5 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
   - ./install_openblocks
-install: ./install_ardublock
+install: mvn validate && mvn clean package
 script: ls target/ardublock-all.jar
