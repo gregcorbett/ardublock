@@ -1,5 +1,9 @@
 language: java
 jdk: openjdk7
-before_install: ./install_openblocks
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+  - ./install_openblocks
 install: ./install_ardublock
 script: ls target/ardublock-all.jar
