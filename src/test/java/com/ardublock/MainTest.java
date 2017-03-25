@@ -53,6 +53,15 @@ public class MainTest
             "src/test/resources/examples/satellite-part2.abp",
             "src/test/resources/examples/satellite-part3.abp",
             "src/test/resources/examples/satellite-part4.abp",
+            //"src/test/resources/examples/AdaL_comms.abp",
+            //"src/test/resources/examples/AdaL_landing.abp",
+            "src/test/resources/examples/AdaL_temp.abp",
+            "src/test/resources/examples/AdaL_temp_autoCalibrate.abp",
+            "src/test/resources/examples/AdaL_RedAlert1.abp",
+            "src/test/resources/examples/AdaL_RedAlert2.abp",
+            "src/test/resources/examples/AdaL_RedAlert3.abp",
+            "src/test/resources/examples/AdaL_RedAlert4.abp",
+
         };
 
         String inoFiles[] = {
@@ -60,6 +69,14 @@ public class MainTest
             "src/test/resources/examples/satellite-part2.ino",
             "src/test/resources/examples/satellite-part3.ino",
             "src/test/resources/examples/satellite-part4.ino",
+            //"src/test/resources/examples/AdaL_comms.ino",
+            //"src/test/resources/examples/AdaL_landing.ino",
+            "src/test/resources/examples/AdaL_temp.ino",
+            "src/test/resources/examples/AdaL_temp_autoCalibrate.ino",
+            "src/test/resources/examples/AdaL_RedAlert1.ino",
+            "src/test/resources/examples/AdaL_RedAlert2.ino",
+            "src/test/resources/examples/AdaL_RedAlert3.ino",
+            "src/test/resources/examples/AdaL_RedAlert4.ino",
         };
         
         for (int i = 0; i < abpFiles.length; i++) {
