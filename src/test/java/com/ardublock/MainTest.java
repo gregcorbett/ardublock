@@ -1,7 +1,9 @@
 package com.ardublock;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.Set;
 import java.util.Scanner;
@@ -73,11 +75,15 @@ public class MainTest
             String expectedCode = new Scanner(new File(inoFile)).useDelimiter("\\Z").next();
             
             if (!generatedCode.equals(expectedCode)) {
-                System.out.println("Failing on " + apbFile);
-                System.out.println("======================================");
-                System.out.println(generatedCode);
-                System.out.println("======================================");
-                System.out.println(expectedCode);
+                System.out.println("Failing on " + apbFile);    
+                try {
+                    PrintWriter out = new PrintWriter(inoFile+".gen");
+                    out.println(generatedCode);
+                    out.close();
+                }
+                catch (FileNotFoundException e) {
+                    System.out.println(generatedCode);
+                }
                 System.exit(-1);
             }
             else {
