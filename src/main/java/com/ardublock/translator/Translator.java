@@ -4,9 +4,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import javax.swing.JOptionPane;
 
@@ -27,21 +24,21 @@ public class Translator
 {
 	private static final String variablePrefix = "";
 
-	private Set<String> headerFileSet;
-	private Set<String> definitionSet;
-	private List<String> setupCommand;
-	private List<String> guinoCommand;
-	private Set<String> functionNameSet;
-	private Set<TranslatorBlock> bodyTranslatreFinishCallbackSet;
+	private LinkedHashSet<String> headerFileSet;
+	private LinkedHashSet<String> definitionSet;
+	private LinkedList<String> setupCommand;
+	private LinkedList<String> guinoCommand;
+	private HashSet<String> functionNameSet;
+	private HashSet<TranslatorBlock> bodyTranslatreFinishCallbackSet;
 	private BlockAdaptor blockAdaptor;
 	
-	private Set<String> inputPinSet;
-	private Set<String> outputPinSet;
+	private HashSet<String> inputPinSet;
+	private HashSet<String> outputPinSet;
 	
-	private Map<String, String> numberVariableSet;
-	private Map<String, String> booleanVariableSet;
-	private Map<String, String> stringVariableSet;
-	private Map<String, Object> internalData;
+	private HashMap<String, String> numberVariableSet;
+	private HashMap<String, String> booleanVariableSet;
+	private HashMap<String, String> stringVariableSet;
+	private HashMap<String, Object> internalData;
 	
 	private Workspace workspace;
 	
@@ -341,9 +338,9 @@ public class Translator
 		this.isGuinoProgram = isGuinoProgram;
 	}
 	
-	public Set<RenderableBlock> findEntryBlocks()
+	public LinkedHashSet<RenderableBlock> findEntryBlocks()
 	{
-		Set<RenderableBlock> loopBlockSet = new HashSet<RenderableBlock>();
+		LinkedHashSet<RenderableBlock> loopBlockSet = new LinkedHashSet<RenderableBlock>();
 		Iterable<RenderableBlock> renderableBlocks = workspace.getRenderableBlocks();
 		
 		for (RenderableBlock renderableBlock:renderableBlocks)
@@ -382,9 +379,9 @@ public class Translator
 		return loopBlockSet;
 	}
 	
-	public Set<RenderableBlock> findSubroutineBlocks() throws SubroutineNameDuplicatedException
+	public LinkedHashSet<RenderableBlock> findSubroutineBlocks() throws SubroutineNameDuplicatedException
 	{
-		Set<RenderableBlock> subroutineBlockSet = new HashSet<RenderableBlock>();
+		LinkedHashSet<RenderableBlock> subroutineBlockSet = new LinkedHashSet<RenderableBlock>();
 		Iterable<RenderableBlock> renderableBlocks = workspace.getRenderableBlocks();
 		
 		for (RenderableBlock renderableBlock:renderableBlocks)
@@ -406,7 +403,7 @@ public class Translator
 		return subroutineBlockSet;
 	}
 	
-	public String translate(Set<RenderableBlock> loopBlocks, Set<RenderableBlock> subroutineBlocks) throws SocketNullException, SubroutineNotDeclaredException
+	public String translate(LinkedHashSet<RenderableBlock> loopBlocks, LinkedHashSet<RenderableBlock> subroutineBlocks) throws SocketNullException, SubroutineNotDeclaredException
 	{
 		StringBuilder code = new StringBuilder();
 		

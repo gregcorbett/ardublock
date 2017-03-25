@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
-import java.util.Set;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -53,8 +53,8 @@ public class MainTest
             "src/test/resources/examples/satellite-part2.abp",
             "src/test/resources/examples/satellite-part3.abp",
             "src/test/resources/examples/satellite-part4.abp",
-            //"src/test/resources/examples/AdaL_comms.abp",
-            //"src/test/resources/examples/AdaL_landing.abp",
+            "src/test/resources/examples/AdaL_comms.abp",
+            "src/test/resources/examples/AdaL_landing.abp",
             "src/test/resources/examples/AdaL_temp.abp",
             "src/test/resources/examples/AdaL_temp_autoCalibrate.abp",
             "src/test/resources/examples/AdaL_RedAlert1.abp",
@@ -69,8 +69,8 @@ public class MainTest
             "src/test/resources/examples/satellite-part2.ino",
             "src/test/resources/examples/satellite-part3.ino",
             "src/test/resources/examples/satellite-part4.ino",
-            //"src/test/resources/examples/AdaL_comms.ino",
-            //"src/test/resources/examples/AdaL_landing.ino",
+            "src/test/resources/examples/AdaL_comms.ino",
+            "src/test/resources/examples/AdaL_landing.ino",
             "src/test/resources/examples/AdaL_temp.ino",
             "src/test/resources/examples/AdaL_temp_autoCalibrate.ino",
             "src/test/resources/examples/AdaL_RedAlert1.ino",
@@ -85,8 +85,8 @@ public class MainTest
             translator.reset();
             File file = new File(apbFile);
             context.loadArduBlockFile(file);
-            Set<RenderableBlock> loopBlockSet = translator.findEntryBlocks();
-            Set<RenderableBlock> subroutineBlockSet = translator.findSubroutineBlocks();
+            LinkedHashSet<RenderableBlock> loopBlockSet = translator.findEntryBlocks();
+            LinkedHashSet<RenderableBlock> subroutineBlockSet = translator.findSubroutineBlocks();
             
             String generatedCode = translator.translate(loopBlockSet, subroutineBlockSet);
             String expectedCode = new Scanner(new File(inoFile)).useDelimiter("\\Z").next();
