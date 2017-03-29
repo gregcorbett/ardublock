@@ -2481,6 +2481,25 @@
 				</Image>
 			</Images>
 		</BlockGenus>
+        
+        <BlockGenus name="Tinker_Hall" kind="data" color="13 152 164" initlabel="bg.Tinker_Hall">
+			<description>
+				<text>TinkerKit Hall Sensor</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug" />
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.pin_number">
+					<DefaultArg genus-name="Tinker_I1" label="I1" />
+				</BlockConnector>
+			</BlockConnectors>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/arduino/Tinker_Hall.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+        
+        
 		<BlockGenus name="Tinker_I0" kind="data" color="255 255 255" initlabel="bg.Tinker_I0" editable-label="no">
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
@@ -9213,6 +9232,7 @@
 				<BlockGenusMember>Tinker_LDR</BlockGenusMember>
 				<BlockGenusMember>Tinker_Tilt</BlockGenusMember>
 				<BlockGenusMember>df_temperature_sensor</BlockGenusMember>
+                <BlockGenusMember>Tinker_Hall</BlockGenusMember>
 			</BlockDrawer>
             <BlockDrawer button-color="55 155 255" name="bd.Fairebot" type="factory">			
 				<BlockGenusMember>FaireBot_Forward</BlockGenusMember>
