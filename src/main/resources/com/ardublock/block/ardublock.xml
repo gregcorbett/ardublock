@@ -2511,7 +2511,7 @@
 			</BlockConnectors>
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/arduino/Tinker_Hall.png</FileLocation>
+					<FileLocation>com/ardublock/block/arduino/Tinker_Hall_Analog.png</FileLocation>
 				</Image>
 			</Images>
 		</BlockGenus>
