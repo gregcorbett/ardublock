@@ -1,5 +1,10 @@
 Changelog
 
+========== Version 2.1.X ==========
+
+Minor Changes:
+- Add Digital and Analog Hall Sensors
+
 ========== Version 2.0.2 ==========
 
 Patches and Bug Fixes:
