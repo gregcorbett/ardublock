@@ -21,7 +21,7 @@ Code written in Ardublock has the file extension .abp.
 4. Start the Arduino IDE and find ArduBlock under the Tool menu
 
 ##Developers
-If you wish to develop ardublock, follow the instructions below. A prerequsite is openblocks, which can be found here https://github.com/gregcorbett/openblocks/archive/v1.0.zip
+If you wish to develop ardublock, follow the instructions below. A prerequsite is openblocks, which can be found here https://github.com/gregcorbett/openblocks
 ###Installation
 
 The project is managed by Maven. After checking out the source for the first time, one should run the following to install Arduino's pde.jar into the local repository. 
