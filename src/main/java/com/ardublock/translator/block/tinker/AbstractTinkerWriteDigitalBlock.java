@@ -26,7 +26,7 @@ public abstract class AbstractTinkerWriteDigitalBlock extends TranslatorBlock
 
 		if (translatorBlock instanceof NumberBlock)
 		{
-			String setupCode = "pinMode( " + number + " , OUTPUT);";
+			String setupCode = "pinMode( " + number + ", OUTPUT);";
 			translator.addSetupCommand(setupCode);
 		}
 

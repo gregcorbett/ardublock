@@ -5,6 +5,9 @@ Changelog
 Minor Changes:
 - Add Digital and Analog Hall Sensors
 
+Patches and Bug Fixes:
+- Standardize `pinMode(#, OUTPUT)` formatting
+
 ========== Version 2.0.2 ==========
 
 Patches and Bug Fixes:
