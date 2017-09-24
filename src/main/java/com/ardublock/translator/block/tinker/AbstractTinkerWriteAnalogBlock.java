@@ -23,7 +23,7 @@ public abstract class AbstractTinkerWriteAnalogBlock extends TranslatorBlock
 		ret = ret + outputPin;
 		ret = ret + ", ";
 		
-		translator.addSetupCommand("pinMode(" + outputPin +  ", OUTPUT);");
+		translator.addSetupCommand("pinMode( " + outputPin +  ", OUTPUT);");
 		translatorBlock = this.getRequiredTranslatorBlockAtSocket(1);
 		ret = ret + translatorBlock.toCode();
 		ret = ret + ");\n";
