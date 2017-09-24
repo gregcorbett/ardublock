@@ -1,17 +1,17 @@
-#ArduBlock
+# ArduBlock
 
 
 ArduBlock is a Block Programming Language for Arduino. The language and functions model closely to [Arduino Language Reference](http://arduino.cc/en/Reference/HomePage)
 
-##Users
+## Users
 Ardublock is a free graphical programming environment to make programming physical computing with Arduino as easy as drag and drop. It is based on the popular ‘scratch’ programming language, which many will already be familiar with.  Ardublock generates code in C, a text based language used by the Arduino IDE, which can then be studied and modified if desired. 
 
 Ardublock is an extension to the Arduino IDE so that will need to be downloaded as well (found here https://www.arduino.cc/en/Main/Software).  
-* Ardublock is tested with version 1.8.2, available here: https://www.arduino.cc/download_handler.php?f=/arduino-1.8.2-windows.exe
+* Ardublock is tested with version 1.8.4, available here: https://www.arduino.cc/download_handler.php?f=/arduino-1.8.4-windows.exe
 
 Code written in Ardublock has the file extension .abp.
 
-####Getting Started with ArduBlock
+#### Getting Started with ArduBlock
 1. Install the Arduino IDE, from https://www.arduino.cc/en/Main/Software
 2. Download ardublock-all.jar https://github.com/stfc/ardublock/releases/latest
 3. Copy ardublock-all.jar to C:/Users/<username>/Arduino/tools/ArduBlockTool/tool/ardublock-all.jar under
@@ -20,19 +20,19 @@ Code written in Ardublock has the file extension .abp.
     * In Linux, /home/<username>/sketchbook/tools/ArduBlockTool/tool/ardublock-all.jar
 4. Start the Arduino IDE and find ArduBlock under the Tool menu
 
-##Developers
+## Developers
 If you wish to develop ardublock, follow the instructions below. A prerequsite is openblocks, which can be found here https://github.com/gregcorbett/openblocks
-###Installation
+### Installation
 
 The project is managed by Maven. After checking out the source for the first time, one should run the following to install Arduino's pde.jar into the local repository. 
 
 	$ mvn validate
 
-###Usage
+### Usage
 
 	$ mvn exec:java -Dexec.mainClass="com.ardublock.Main"
 
-###Development
+### Development
 
 Change the /src/main/resources/com/ardublock/block/ardublock_def.xml to add new blocks to ArduBlock
 
@@ -42,7 +42,7 @@ Change the /src/main/resources/com/ardublock/block/ardublock_def.xml to add new 
 
 The Visual Block environment should show up. Happy Hacking! ;) 
 
-###Deploy
+### Deploy
 
 Edit code of ardublock
 
@@ -50,7 +50,7 @@ Edit code of ardublock
 
 copy the target/ardublock-all.jar to Arduino\tools\ArduBlockTool\tool
 
-##Authors
+## Authors
 
 The original code (https://github.com/taweili/ardublock) was developed at MIT and the authors can be contacted below.
 
@@ -59,7 +59,7 @@ The original code (https://github.com/taweili/ardublock) was developed at MIT an
 
 The author/maintainer of this fork can be contacted at greg.corbett@stfc.ac.uk.
 
-##License
+## License
 Copyright (C) 2011 David Li and He Qichen
 
 This file is part of ArduBlock.
