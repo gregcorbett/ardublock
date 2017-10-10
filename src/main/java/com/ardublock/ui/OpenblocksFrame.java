@@ -32,6 +32,7 @@ import com.ardublock.ui.listener.OpenButtonListener;
 import com.ardublock.ui.listener.OpenblocksFrameListener;
 import com.ardublock.ui.listener.SaveAsButtonListener;
 import com.ardublock.ui.listener.SaveButtonListener;
+import com.ardublock.ui.listener.EraseButtonListener;
 
 import edu.mit.blocks.controller.WorkspaceController;
 import edu.mit.blocks.workspace.Workspace;
@@ -168,8 +169,13 @@ public class OpenblocksFrame extends JFrame
 			    }
 			}
 		});
+
+		JButton eraseProgramButton = new JButton(uiMessageBundle.getString("ardublock.ui.erase"));
+		eraseProgramButton.addActionListener(new EraseButtonListener(this, context));
+
 		JLabel versionLabel = new JLabel("v " + uiMessageBundle.getString("ardublock.ui.version"));
 		
+		bottomPanel.add(eraseProgramButton);
 		bottomPanel.add(saveImageButton);
 		bottomPanel.add(websiteButton);
 		bottomPanel.add(versionLabel);
