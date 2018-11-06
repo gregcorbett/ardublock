@@ -97,6 +97,8 @@ public class MainTest
                     PrintWriter out = new PrintWriter(inoFile+".gen");
                     out.println(generatedCode);
                     out.close();
+                    System.out.println("Expected code here: "+inoFile);
+                    System.out.println("Generated code here: "+inoFile+".gen");
                 }
                 catch (FileNotFoundException e) {
                     System.out.println(generatedCode);
