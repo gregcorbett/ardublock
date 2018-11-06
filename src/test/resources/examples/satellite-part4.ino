@@ -4,7 +4,7 @@ double tempC = 0.0 ;
 void setup()
 {
 Serial.begin(9600);
-pinMode( 2 , OUTPUT);
+pinMode( 2, OUTPUT);
 }
 
 void loop()

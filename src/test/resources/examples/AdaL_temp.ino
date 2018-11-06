@@ -5,11 +5,11 @@ void lights();
 
 void setup()
 {
-pinMode( 8 , OUTPUT);
-pinMode( 7 , OUTPUT);
-pinMode( 6 , OUTPUT);
-pinMode( 5 , OUTPUT);
-pinMode( 4 , OUTPUT);
+pinMode( 8, OUTPUT);
+pinMode( 7, OUTPUT);
+pinMode( 6, OUTPUT);
+pinMode( 5, OUTPUT);
+pinMode( 4, OUTPUT);
 }
 
 void loop()

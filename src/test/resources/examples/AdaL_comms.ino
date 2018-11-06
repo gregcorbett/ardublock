@@ -1,23 +1,23 @@
 void D();
 void G();
+void dot();
+void H();
+void I();
+void message();
 void M();
 void N();
 void O();
-void H();
-void I();
-void dot();
-void message();
-void dash();
 void P();
-void S();
 void R();
+void S();
 void Y();
+void dash();
 
 void setup()
 {
-pinMode( 3 , OUTPUT);
+pinMode( 3, OUTPUT);
 pinMode( 2 , INPUT);
-pinMode( 9 , OUTPUT);
+pinMode( 9, OUTPUT);
 pinMode( 8 , INPUT);
 pinMode( 6 , INPUT);
 }

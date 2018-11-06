@@ -6,18 +6,18 @@ int light = 0 ;
 int range = 0 ;
 int diff = 0 ;
 
-void distance();
 void ldrSetup();
+void distance();
 void speed();
 
 void setup()
 {
-pinMode( 8 , OUTPUT);
-pinMode( 9 , OUTPUT);
-pinMode( 13 , OUTPUT);
-pinMode( 12 , OUTPUT);
-pinMode( 11 , OUTPUT);
-pinMode( 10 , OUTPUT);
+pinMode( 8, OUTPUT);
+pinMode( 9, OUTPUT);
+pinMode( 13, OUTPUT);
+pinMode( 12, OUTPUT);
+pinMode( 11, OUTPUT);
+pinMode( 10, OUTPUT);
 }
 
 void loop()
