@@ -95,7 +95,7 @@ public class MainTest
                 System.out.println("Failing on " + apbFile);    
                 try {
                     PrintWriter out = new PrintWriter(inoFile+".gen");
-                    out.println(generatedCode);
+                    out.print(generatedCode);
                     out.close();
                     System.out.println("Expected code here: "+inoFile);
                     System.out.println("Generated code here: "+inoFile+".gen");
