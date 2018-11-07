@@ -92,8 +92,6 @@ public class MainTest
             String expectedCode = new Scanner(new File(inoFile)).useDelimiter("\\Z").next();
             
             if (!generatedCode.equals(expectedCode)) {
-                System.out.println(generatedCode);
-                System.out.println(expectedCode);
                 System.out.println("Failing on " + apbFile);    
                 try {
                     PrintWriter out = new PrintWriter(inoFile+".gen");
