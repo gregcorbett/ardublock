@@ -7,8 +7,8 @@ int range = 0 ;
 int diff = 0 ;
 
 void ldrSetup();
-void distance();
 void speed();
+void distance();
 
 void setup()
 {

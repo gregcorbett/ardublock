@@ -1,17 +1,17 @@
-void D();
-void G();
-void dot();
-void H();
-void I();
-void message();
-void M();
 void N();
-void O();
-void P();
 void R();
+void M();
+void O();
+void D();
+void dot();
+void dash();
+void I();
+void G();
+void P();
 void S();
 void Y();
-void dash();
+void H();
+void message();
 
 void setup()
 {
