@@ -1,7 +1,6 @@
 package com.ardublock.translator;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
@@ -28,12 +27,12 @@ public class Translator
 	private LinkedHashSet<String> definitionSet;
 	private LinkedList<String> setupCommand;
 	private LinkedList<String> guinoCommand;
-	private HashSet<String> functionNameSet;
-	private HashSet<TranslatorBlock> bodyTranslatreFinishCallbackSet;
+	private LinkedHashSet<String> functionNameSet;
+	private LinkedHashSet<TranslatorBlock> bodyTranslatreFinishCallbackSet;
 	private BlockAdaptor blockAdaptor;
 	
-	private HashSet<String> inputPinSet;
-	private HashSet<String> outputPinSet;
+	private LinkedHashSet<String> inputPinSet;
+	private LinkedHashSet<String> outputPinSet;
 	
 	private HashMap<String, String> numberVariableSet;
 	private HashMap<String, String> booleanVariableSet;
@@ -161,10 +160,10 @@ public class Translator
 		definitionSet = new LinkedHashSet<String>();
 		setupCommand = new LinkedList<String>();
 		guinoCommand = new LinkedList<String>();
-		functionNameSet = new HashSet<String>();
-		inputPinSet = new HashSet<String>();
-		outputPinSet = new HashSet<String>();
-		bodyTranslatreFinishCallbackSet = new HashSet<TranslatorBlock>();
+		functionNameSet = new LinkedHashSet<String>();
+		inputPinSet = new LinkedHashSet<String>();
+		outputPinSet = new LinkedHashSet<String>();
+		bodyTranslatreFinishCallbackSet = new LinkedHashSet<TranslatorBlock>();
 		
 		numberVariableSet = new HashMap<String, String>();
 		booleanVariableSet = new HashMap<String, String>();
