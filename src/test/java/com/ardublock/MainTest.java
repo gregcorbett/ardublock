@@ -35,34 +35,34 @@ public class MainTest
 	{
 		System.out.println("### setUp()");
 		main = new Main();
-		// main.startArdublock();
-		// context = Context.getContext();
-		// Workspace workspace = context.getWorkspaceController().getWorkspace();
-		// translator = new Translator(workspace);
+		main.startArdublock();
+		context = Context.getContext();
+		Workspace workspace = context.getWorkspaceController().getWorkspace();
+		translator = new Translator(workspace);
 	}
 	
 	@Test
 	public void testFiles() throws SAXException, IOException, ParserConfigurationException, SubroutineNameDuplicatedException, SocketNullException, SubroutineNotDeclaredException
 	{
 		System.out.println("### testFiles");
-		// String savedFiles[] = {
-		// 		"src/test/resources/examples/factorial.abp",
-		// 		"src/test/resources/examples/single-loop.abp",
-		// 		};
-		// 
-		// 
-		// 
-		// for (String savedFile : savedFiles)
-		// {
-		// 	translator.reset();
-		// 	File file = new File(savedFile);
-		// 	context.loadArduBlockFile(file);
-		// 	Set<RenderableBlock> loopBlockSet = translator.findEntryBlocks();
-		// 	Set<RenderableBlock> subroutineBlockSet = translator.findSubroutineBlocks();
-		// 	
-		// 	String code = translator.translate(loopBlockSet, subroutineBlockSet);
-		// 	System.out.println(code);
-		// }
+		String savedFiles[] = {
+		 		"src/test/resources/examples/factorial.abp",
+		 		"src/test/resources/examples/single-loop.abp",
+		 		};
+		 
+		 
+		 
+		 for (String savedFile : savedFiles)
+		 {
+		 	translator.reset();
+		 	File file = new File(savedFile);
+		 	context.loadArduBlockFile(file);
+		 	Set<RenderableBlock> loopBlockSet = translator.findEntryBlocks();
+		 	Set<RenderableBlock> subroutineBlockSet = translator.findSubroutineBlocks();
+		 	
+		 	String code = translator.translate(loopBlockSet, subroutineBlockSet);
+		 	System.out.println(code);
+		 }
 	}
 	
 	@Test
