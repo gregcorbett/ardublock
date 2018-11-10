@@ -2,6 +2,7 @@ package com.ardublock;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
@@ -48,42 +49,22 @@ public class MainTest
 	public void testFiles() throws SAXException, IOException, ParserConfigurationException, SubroutineNameDuplicatedException, SocketNullException, SubroutineNotDeclaredException
 	{
 		System.out.println("### testFiles");
-        String abpFiles[] = {
-            "src/test/resources/examples/satellite-part1.abp",
-            "src/test/resources/examples/satellite-part2.abp",
-            "src/test/resources/examples/satellite-part3.abp",
-            "src/test/resources/examples/satellite-part4.abp",
-            "src/test/resources/examples/AdaL_comms.abp",
-            "src/test/resources/examples/AdaL_landing.abp",
-            "src/test/resources/examples/AdaL_temp.abp",
-            "src/test/resources/examples/AdaL_temp_autoCalibrate.abp",
-            "src/test/resources/examples/AdaL_RedAlert1.abp",
-            "src/test/resources/examples/AdaL_RedAlert2.abp",
-            "src/test/resources/examples/AdaL_RedAlert3.abp",
-            "src/test/resources/examples/AdaL_RedAlert4.abp",
-
-        };
-
-        String inoFiles[] = {
-            "src/test/resources/examples/satellite-part1.ino",
-            "src/test/resources/examples/satellite-part2.ino",
-            "src/test/resources/examples/satellite-part3.ino",
-            "src/test/resources/examples/satellite-part4.ino",
-            "src/test/resources/examples/AdaL_comms.ino",
-            "src/test/resources/examples/AdaL_landing.ino",
-            "src/test/resources/examples/AdaL_temp.ino",
-            "src/test/resources/examples/AdaL_temp_autoCalibrate.ino",
-            "src/test/resources/examples/AdaL_RedAlert1.ino",
-            "src/test/resources/examples/AdaL_RedAlert2.ino",
-            "src/test/resources/examples/AdaL_RedAlert3.ino",
-            "src/test/resources/examples/AdaL_RedAlert4.ino",
-        };
+        File abpFileDirectory = new File("src/test/resources/examples");
+        // List the .abp files in abpFileDirectory
+        File[] abpFiles = abpFileDirectory.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.endsWith(".abp");
+            }
+        });
         
         for (int i = 0; i < abpFiles.length; i++) {
-            String apbFile = abpFiles[i];
-            String inoFile = inoFiles[i];
+            String abpFile = abpFiles[i].getAbsolutePath();
+            String inoFile = abpFile.split("\\.")[0] + ".ino";
+
+            // Generate C code from the .abp file.
             translator.reset();
-            File file = new File(apbFile);
+            File file = new File(abpFile);
             context.loadArduBlockFile(file);
             LinkedHashSet<RenderableBlock> loopBlockSet = translator.findEntryBlocks();
             LinkedHashSet<RenderableBlock> subroutineBlockSet = translator.findSubroutineBlocks();
@@ -91,22 +72,16 @@ public class MainTest
             String generatedCode = translator.translate(loopBlockSet, subroutineBlockSet);
             String expectedCode = new Scanner(new File(inoFile)).useDelimiter("\\Z").next();
             
-            if (!generatedCode.equals(expectedCode)) {
-                System.out.println("Failing on " + apbFile);    
-                try {
-                    PrintWriter out = new PrintWriter(inoFile+".gen");
-                    out.print(generatedCode+"\n");
-                    out.close();
-                    System.out.println("Expected code here: "+inoFile);
-                    System.out.println("Generated code here: "+inoFile+".gen");
-                }
-                catch (FileNotFoundException e) {
-                    System.out.println(generatedCode);
-                }
-                System.exit(-1);
+            if (generatedCode.equals(expectedCode)) {
+                System.out.println(abpFile + " passing");
             }
             else {
-                System.out.println(apbFile + " passing");
+                System.out.println("Failing on " + abpFile);
+                System.out.println("Expected code");
+                System.out.println(expectedCode);
+                System.out.println("Generated code");
+                System.out.println(generatedCode);
+                System.exit(-1);
             }
 
             try {
