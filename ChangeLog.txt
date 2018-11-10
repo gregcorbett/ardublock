@@ -1,5 +1,13 @@
 Changelog
 
+========== Version 2.2.0 ==========
+
+New Features and Minor Changes:
+- Add an 'Erase Arduino Program' Button to the UI
+
+Patches, Bug Fixes and Documentation Changes:
+- Style improvements to 'Getting Started with ArduBlock' section of README.md
+
 ========== Version 2.1.1 ==========
 
 Patches and Bug Fixes:
