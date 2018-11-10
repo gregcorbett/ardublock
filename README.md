@@ -14,10 +14,10 @@ Code written in Ardublock has the file extension .abp.
 #### Getting Started with ArduBlock
 1. Install the Arduino IDE, from https://www.arduino.cc/en/Main/Software
 2. Download ardublock-all.jar https://github.com/stfc/ardublock/releases/latest
-3. Copy ardublock-all.jar to C:/Users/<username>/Arduino/tools/ArduBlockTool/tool/ardublock-all.jar under
-    * Be careful, the name of folder “ArduBlockTool” under tools folder is case sensitive. 
-    * In Mac, /Users/<username>/Documents/Arduino/tools/ArduBlockTool/tool/ardublock-all.jar
-    * In Linux, /home/<username>/sketchbook/tools/ArduBlockTool/tool/ardublock-all.jar
+3. Copy ardublock-all.jar to `C:/Users/<username>/Arduino/tools/ArduBlockTool/tool/ardublock-all.jar` under
+    * Be careful, the name of folder “ArduBlockTool” under tools folder is case sensitive.
+    * In Mac, `/Users/<username>/Documents/Arduino/tools/ArduBlockTool/tool/ardublock-all.jar`
+    * In Linux, `/home/<username>/sketchbook/tools/ArduBlockTool/tool/ardublock-all.jar`
 4. Start the Arduino IDE and find ArduBlock under the Tool menu
 
 ## Developers
